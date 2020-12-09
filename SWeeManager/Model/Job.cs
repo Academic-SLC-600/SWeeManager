@@ -10,6 +10,6 @@ namespace SWeeManager.Model
     {
         public string Id { get; set; }
         public string Code { get; set; }
-        public string Initial { get; set; }
+        public string Username { get; set; }
     }
 }

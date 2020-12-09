@@ -25,8 +25,15 @@ namespace SWeeManager
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            ResetForm();
+        }
+
+        private void ResetForm()
+        {
             btnGrantAll.Enabled = false;
             btnRevokeAll.Enabled = false;
+            txtFolder.Text = placeholder;
+            txtFolder.ForeColor = Color.Gray;
         }
 
         private void btnChooseFolder_Click(object sender, EventArgs e)
@@ -38,11 +45,27 @@ namespace SWeeManager
             }
         }
 
-        private void txtFolder_MouseDown(object sender, MouseEventArgs e)
+        private void txtFolder_Enter(object sender, EventArgs e)
         {
-            txtFolder.Text = "";
-            txtFolder.ForeColor = Color.Black;
+            var dir = txtFolder.Text;
+
+            if (String.IsNullOrEmpty(dir) || dir.Equals(placeholder))
+            {
+                txtFolder.Text = "";
+                txtFolder.ForeColor = Color.Black;
+            }
         }
+
+        private void txtFolder_Leave(object sender, EventArgs e)
+        {
+            var dir = txtFolder.Text;
+
+            if (String.IsNullOrEmpty(dir))
+            {
+                ResetForm();
+            }
+        }
+
 
         private void txtFolder_TextChanged(object sender, EventArgs e)
         {
@@ -67,7 +90,7 @@ namespace SWeeManager
 
                 btnGrantAll.Enabled = true;
                 btnRevokeAll.Enabled = true;
-                jobBindingSource.Clear();
+                jobBindingSource1.Clear();
                 foreach (var item in lists)
                 {
                     if (item.ToLower().Contains("readme"))
@@ -75,41 +98,43 @@ namespace SWeeManager
                         continue;
                     }
 
-                    jobBindingSource.Add(new Job()
+                    jobBindingSource1.Add(new Job()
                     {
                         Id = Guid.NewGuid().ToString(),
                         Code = code.ToUpper(),
-                        Initial = item.Substring(item.LastIndexOf('\\') + 1).ToUpper(),
+                        Username = item.Substring(item.LastIndexOf('\\') + 1).ToUpper(),
                     });
                 }
             }
             catch (Exception)
             {
-                btnGrantAll.Enabled = false;
-                btnRevokeAll.Enabled = false;
+                ResetForm();
                 MessageBox.Show("Invalid directory path");
             }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var initial = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            var username = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             var dir = txtFolder.Text;
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Grant")
             {
-                GrantAccess(dir, initial);
-                MessageBox.Show("Successfully grant access for initial " + initial);
+                if (GrantAccessRoot(dir))
+                {
+                    GrantAccess(dir, username);
+                    MessageBox.Show("Successfully grant access for username " + username);
+                }
             }
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "Revoke")
             {
-                RevokeAccess(dir, initial);
-                MessageBox.Show("Successfully revoke access for initial " + initial);
+                RevokeAccess(dir, username);
+                MessageBox.Show("Successfully revoke access for username " + username);
             }
         }
 
-        private void Exec(string root, string access, string initial, string permission = "")
+        private void Exec(string root, string access, string username, string permission = "")
         {
-            var command = String.Format("icacls \"{0}\" /{1} {2}{3}", root, access, initial, permission).Trim();
+            var command = String.Format("/C icacls \"{0}\" /{1} {2}{3}", root, access, username, permission).Trim();
             try
             {
                 Process process = new Process();
@@ -119,6 +144,7 @@ namespace SWeeManager
                 startInfo.Arguments = command;
                 process.StartInfo = startInfo;
                 process.Start();
+                Console.WriteLine(command);
             }
             catch (Exception)
             {
@@ -126,39 +152,43 @@ namespace SWeeManager
             }
         }
 
-        private void GrantAccess(string root, string initial)
+        private void GrantAccess(string root, string username)
         {
-            Exec(root, "grant:r", initial, ":(R)");
+            Exec(root, "grant:r", username, ":(R)");
             root = root + "\\";
-            Exec(root + "readme", "grant:r", initial, ":(OI)(CI)(R)");
-            Exec(root + initial, "grant:r", initial, ":(OI)(CI)(RX,WD,WEA,WA)");
+            Exec(root + "readme", "grant:r", username, ":(OI)(CI)(R)");
+            Exec(root + username, "grant:r", username, ":(OI)(CI)(RX,WD,WEA,WA)");
         }
 
-        private void RevokeAccess(string root, string initial)
+        private void RevokeAccess(string root, string username)
         {
-            Exec(root, "remove:g", initial);
+            Exec(root, "remove:g", username);
             root = root + "\\";
-            Exec(root + "readme", "remove:g", initial);
-            Exec(root + initial, "remove:g", initial);
+            Exec(root + "readme", "remove:g", username);
+            Exec(root + username, "remove:g", username);
         }
 
         private void btnGrantAll_Click(object sender, EventArgs e)
         {
             var dir = txtFolder.Text;
 
-            foreach (var item in lists)
+            if (GrantAccessRoot(dir))
             {
-                if (item.ToLower().Contains("readme"))
+                foreach (var item in lists)
                 {
-                    continue;
+                    if (item.ToLower().Contains("readme"))
+                    {
+                        continue;
+                    }
+
+                    var username = item.Substring(item.LastIndexOf('\\') + 1).ToUpper();
+
+                    GrantAccess(dir, username);
                 }
 
-                var initial = item.Substring(item.LastIndexOf('\\') + 1).ToUpper();
-
-                GrantAccess(dir, initial);
+                MessageBox.Show("Successfully grant all access");
             }
 
-            MessageBox.Show("Successfully grant all access");
         }
 
         private void btnRevokeAll_Click(object sender, EventArgs e)
@@ -172,12 +202,38 @@ namespace SWeeManager
                     continue;
                 }
 
-                var initial = item.Substring(item.LastIndexOf('\\') + 1).ToUpper();
+                var username = item.Substring(item.LastIndexOf('\\') + 1).ToUpper();
 
-                RevokeAccess(dir, initial);
+                RevokeAccess(dir, username);
             }
 
             MessageBox.Show("Successfully revoke all access");
+        }
+
+        private bool GrantAccessRoot(string root)
+        {
+            try
+            {
+                var dirs = root.Split(new string[] { "\\For Ast\\" }, StringSplitOptions.None);
+                if (dirs.Length != 2)
+                {
+                    throw new Exception("Invalid");
+                }
+
+                var path = dirs[0] + "\\For Ast\\";
+                foreach (var item in dirs[1].Split('\\'))
+                {
+                    path += item;
+                    Exec(path, "grant:r", "Employee", ":(R)");
+                    path += "\\";
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("The root folder must be SUBCO\\For Ast\\");
+                return false;
+            }
+            return true;
         }
     }
 }
