@@ -100,8 +100,7 @@ namespace SWeeManager
 
                     jobBindingSource1.Add(new Job()
                     {
-                        Id = Guid.NewGuid().ToString(),
-                        Code = code.ToUpper(),
+                        Course = code.ToUpper(),
                         Username = item.Substring(item.LastIndexOf('\\') + 1).ToUpper(),
                     });
                 }
