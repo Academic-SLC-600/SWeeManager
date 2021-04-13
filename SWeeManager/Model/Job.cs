@@ -8,8 +8,7 @@ namespace SWeeManager.Model
 {
     class Job
     {
-        public string Id { get; set; }
-        public string Code { get; set; }
+        public string Course { get; set; }
         public string Username { get; set; }
     }
 }

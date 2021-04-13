@@ -16,7 +16,7 @@ namespace SWeeManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SWeeManagerForm());
+            Application.Run(new Form1());
         }
     }
 }
