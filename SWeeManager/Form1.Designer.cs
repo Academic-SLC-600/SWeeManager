@@ -37,10 +37,15 @@ namespace SWeeManager
             this.btnChooseFolder = new System.Windows.Forms.Button();
             this.txtFolder = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+<<<<<<< HEAD
+=======
+            this.jobBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+>>>>>>> bcafd70cfdec7f10093c04b022f33984af5adf69
             this.btnGrantAll = new System.Windows.Forms.Button();
             this.btnRevokeAll = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grant = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Revoke = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -51,6 +56,15 @@ namespace SWeeManager
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).BeginInit();
+=======
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Course = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Grant = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Revoke = new System.Windows.Forms.DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource1)).BeginInit();
+>>>>>>> bcafd70cfdec7f10093c04b022f33984af5adf69
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,7 +110,11 @@ namespace SWeeManager
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+<<<<<<< HEAD
             this.codeDataGridViewTextBoxColumn,
+=======
+            this.Course,
+>>>>>>> bcafd70cfdec7f10093c04b022f33984af5adf69
             this.Username,
             this.Grant,
             this.Revoke});
@@ -171,6 +189,28 @@ namespace SWeeManager
             this.label2.TabIndex = 7;
             this.label2.Text = "Created By SW16-2";
             // 
+<<<<<<< HEAD
+=======
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(647, 200);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(145, 145);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Course
+            // 
+            this.Course.DataPropertyName = "Course";
+            this.Course.HeaderText = "Course";
+            this.Course.Name = "Course";
+            this.Course.ReadOnly = true;
+            this.Course.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Course.Width = 222;
+            // 
+>>>>>>> bcafd70cfdec7f10093c04b022f33984af5adf69
             // Username
             // 
             this.Username.DataPropertyName = "Username";
@@ -189,6 +229,7 @@ namespace SWeeManager
             this.Grant.Text = "Grant";
             this.Grant.UseColumnTextForButtonValue = true;
             this.Grant.Width = 113;
+<<<<<<< HEAD
             // 
             // Revoke
             // 
@@ -214,8 +255,18 @@ namespace SWeeManager
             this.jobBindingSource1.DataSource = typeof(SWeeManager.Model.Job);
             // 
             // jobBindingSource
+=======
+>>>>>>> bcafd70cfdec7f10093c04b022f33984af5adf69
             // 
-            this.jobBindingSource.DataSource = typeof(SWeeManager.Model.Job);
+            // Revoke
+            // 
+            this.Revoke.HeaderText = "Revoke";
+            this.Revoke.Name = "Revoke";
+            this.Revoke.ReadOnly = true;
+            this.Revoke.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Revoke.Text = "Revoke";
+            this.Revoke.UseColumnTextForButtonValue = true;
+            this.Revoke.Width = 113;
             // 
             // pictureBox1
             // 
@@ -249,7 +300,10 @@ namespace SWeeManager
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource1)).EndInit();
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).EndInit();
+=======
+>>>>>>> bcafd70cfdec7f10093c04b022f33984af5adf69
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -261,7 +315,6 @@ namespace SWeeManager
         private System.Windows.Forms.Button btnChooseFolder;
         private System.Windows.Forms.TextBox txtFolder;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource jobBindingSource;
         private System.Windows.Forms.Button btnGrantAll;
         private System.Windows.Forms.Button btnRevokeAll;
         private System.Windows.Forms.Label label1;
@@ -269,6 +322,8 @@ namespace SWeeManager
         private System.Windows.Forms.DataGridViewTextBoxColumn initialDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource jobBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Course;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username;
         private System.Windows.Forms.DataGridViewButtonColumn Grant;
         private System.Windows.Forms.DataGridViewButtonColumn Revoke;
