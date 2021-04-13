@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -100,8 +101,7 @@ namespace SWeeManager
 
                     jobBindingSource1.Add(new Job()
                     {
-                        Id = Guid.NewGuid().ToString(),
-                        Code = code.ToUpper(),
+                        Course = code.ToUpper(),
                         Username = item.Substring(item.LastIndexOf('\\') + 1).ToUpper(),
                     });
                 }
@@ -115,7 +115,7 @@ namespace SWeeManager
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var username = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            var username = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             var dir = txtFolder.Text;
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Grant")
             {
@@ -144,7 +144,9 @@ namespace SWeeManager
                 startInfo.Arguments = command;
                 process.StartInfo = startInfo;
                 process.Start();
+                process.WaitForExit();
                 Console.WriteLine(command);
+                Thread.Sleep(1000);
             }
             catch (Exception)
             {
