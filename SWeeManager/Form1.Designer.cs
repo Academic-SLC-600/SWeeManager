@@ -1,7 +1,7 @@
 ﻿
 namespace SWeeManager
 {
-    partial class Form1
+    partial class SWeeManagerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,42 +30,26 @@ namespace SWeeManager
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SWeeManagerForm));
             this.btnChooseFolder = new System.Windows.Forms.Button();
             this.txtFolder = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-<<<<<<< HEAD
-=======
-            this.jobBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
->>>>>>> bcafd70cfdec7f10093c04b022f33984af5adf69
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.btnGrantAll = new System.Windows.Forms.Button();
             this.btnRevokeAll = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-<<<<<<< HEAD
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dataGridViewBinding = new System.Windows.Forms.BindingSource(this.components);
+            this.courseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grant = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Revoke = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.jobBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).BeginInit();
-=======
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Course = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Grant = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Revoke = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource1)).BeginInit();
->>>>>>> bcafd70cfdec7f10093c04b022f33984af5adf69
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBinding)).BeginInit();
             this.SuspendLayout();
             // 
             // btnChooseFolder
@@ -95,51 +79,47 @@ namespace SWeeManager
             this.txtFolder.Enter += new System.EventHandler(this.txtFolder_Enter);
             this.txtFolder.Leave += new System.EventHandler(this.txtFolder_Leave);
             // 
-            // dataGridView1
+            // dataGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-<<<<<<< HEAD
-            this.codeDataGridViewTextBoxColumn,
-=======
-            this.Course,
->>>>>>> bcafd70cfdec7f10093c04b022f33984af5adf69
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AutoGenerateColumns = false;
+            this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.courseDataGridViewTextBoxColumn,
             this.Username,
             this.Grant,
             this.Revoke});
-            this.dataGridView1.DataSource = this.jobBindingSource1;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 58);
-            this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.Size = new System.Drawing.Size(629, 380);
-            this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView.DataSource = this.dataGridViewBinding;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView.Location = new System.Drawing.Point(12, 58);
+            this.dataGridView.Name = "dataGridView";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView.Size = new System.Drawing.Size(629, 380);
+            this.dataGridView.TabIndex = 3;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnGrantAll
             // 
@@ -189,28 +169,28 @@ namespace SWeeManager
             this.label2.TabIndex = 7;
             this.label2.Text = "Created By SW16-2";
             // 
-<<<<<<< HEAD
-=======
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(647, 200);
+            this.pictureBox1.Location = new System.Drawing.Point(652, 208);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(145, 145);
+            this.pictureBox1.Size = new System.Drawing.Size(140, 140);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // Course
+            // dataGridViewBinding
             // 
-            this.Course.DataPropertyName = "Course";
-            this.Course.HeaderText = "Course";
-            this.Course.Name = "Course";
-            this.Course.ReadOnly = true;
-            this.Course.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Course.Width = 222;
+            this.dataGridViewBinding.DataSource = typeof(SWeeManager.Model.Job);
             // 
->>>>>>> bcafd70cfdec7f10093c04b022f33984af5adf69
+            // courseDataGridViewTextBoxColumn
+            // 
+            this.courseDataGridViewTextBoxColumn.DataPropertyName = "Course";
+            this.courseDataGridViewTextBoxColumn.HeaderText = "Course";
+            this.courseDataGridViewTextBoxColumn.Name = "courseDataGridViewTextBoxColumn";
+            this.courseDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.courseDataGridViewTextBoxColumn.Width = 250;
+            // 
             // Username
             // 
             this.Username.DataPropertyName = "Username";
@@ -218,7 +198,6 @@ namespace SWeeManager
             this.Username.Name = "Username";
             this.Username.ReadOnly = true;
             this.Username.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Username.Width = 120;
             // 
             // Grant
             // 
@@ -228,8 +207,7 @@ namespace SWeeManager
             this.Grant.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Grant.Text = "Grant";
             this.Grant.UseColumnTextForButtonValue = true;
-            this.Grant.Width = 113;
-<<<<<<< HEAD
+            this.Grant.Width = 80;
             // 
             // Revoke
             // 
@@ -239,46 +217,9 @@ namespace SWeeManager
             this.Revoke.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Revoke.Text = "Revoke";
             this.Revoke.UseColumnTextForButtonValue = true;
-            this.Revoke.Width = 113;
+            this.Revoke.Width = 80;
             // 
-            // codeDataGridViewTextBoxColumn
-            // 
-            this.codeDataGridViewTextBoxColumn.DataPropertyName = "Course";
-            this.codeDataGridViewTextBoxColumn.HeaderText = "Course";
-            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
-            this.codeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.codeDataGridViewTextBoxColumn.Width = 222;
-            // 
-            // jobBindingSource1
-            // 
-            this.jobBindingSource1.DataSource = typeof(SWeeManager.Model.Job);
-            // 
-            // jobBindingSource
-=======
->>>>>>> bcafd70cfdec7f10093c04b022f33984af5adf69
-            // 
-            // Revoke
-            // 
-            this.Revoke.HeaderText = "Revoke";
-            this.Revoke.Name = "Revoke";
-            this.Revoke.ReadOnly = true;
-            this.Revoke.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Revoke.Text = "Revoke";
-            this.Revoke.UseColumnTextForButtonValue = true;
-            this.Revoke.Width = 113;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(647, 200);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(145, 145);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
-            // Form1
+            // SWeeManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -289,22 +230,18 @@ namespace SWeeManager
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRevokeAll);
             this.Controls.Add(this.btnGrantAll);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.txtFolder);
             this.Controls.Add(this.btnChooseFolder);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "SWeeManagerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SWeeManager";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource1)).EndInit();
-<<<<<<< HEAD
-            ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).EndInit();
-=======
->>>>>>> bcafd70cfdec7f10093c04b022f33984af5adf69
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBinding)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,20 +251,20 @@ namespace SWeeManager
 
         private System.Windows.Forms.Button btnChooseFolder;
         private System.Windows.Forms.TextBox txtFolder;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button btnGrantAll;
         private System.Windows.Forms.Button btnRevokeAll;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn initialDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource jobBindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Course;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource dataGridViewBinding;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courseDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username;
         private System.Windows.Forms.DataGridViewButtonColumn Grant;
         private System.Windows.Forms.DataGridViewButtonColumn Revoke;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
